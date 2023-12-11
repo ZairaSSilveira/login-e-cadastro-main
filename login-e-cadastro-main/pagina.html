@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página de Login</title>
+  <style>
+ body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #userInfo {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 5px 0;
+    }  </style>
+</head>
+<body>
+  <h1>Bem-vindo à página de login</h1>
+
+  <div id="userInfo">
+    <h2>Dados do usuário:</h2>
+    <p id="name"></p>
+    <p id="email"></p>
+  </div>
+
+  <script>
+    // JavaScript
+    document.addEventListener("DOMContentLoaded", function() {
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user) {
+        document.getElementById('name').textContent = "Nome: " + user.name;
+        document.getElementById('email').textContent = "Email: " + user.email;
+      }
+    });
+  </script>
+</body>
+</html>
